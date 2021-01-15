@@ -40,3 +40,12 @@ class Personagem:
 
     def setPorcentagemPowerUp(self, porcentagem_powerup):
         self.porcentagem_powerup = porcentagem_powerup          
+
+
+    def criar_personagem(self):
+            self._nome_personagem = input('Nome do personagem: ')
+            self._tipo_personagem = input('Classe do personagem: ')
+            self.pontos_vida = int(input('Coloque os pontos de VIDA do personagem: '))
+            self.pontos_ataque = int(input('Coloque o valor do ATAQUE do personagem: '))
+            self.pontos_defesa = int(input('Coloque os pontos de DEFESA do personagem: '))
+            self.porcentagem_powerup = int(input('Coloque, em porcentagem, o valor de POWERUP do personagem: '))

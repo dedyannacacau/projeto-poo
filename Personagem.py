@@ -7,6 +7,8 @@ class Personagem:
         self.pontos_defesa = pontos_defesa
         self.porcentagem_powerup = porcentagem_powerup
 
+    # Métodos trasnferidos para classe personagem aqui:
+
     @property
     def nome_personagem(self):
         return self._nome_personagem
@@ -14,7 +16,6 @@ class Personagem:
     @nome_personagem.setter
     def nome_personagem(self, nome_personagem):
         self._nome_personagem = nome_personagem
-
 
     @property
     def tipo_personagem(self):
@@ -24,15 +25,13 @@ class Personagem:
     def tipo_personagem(self, tipo_personagem):
         self._tipo_personagem = tipo_personagem
 
-
     @property
     def pontos_vidas(self):
-        return self._pontos_vidas    
+        return self._pontos_vidas
 
-    @pontos_vidas.setter 
+    @pontos_vidas.setter
     def pontos_vidas(self, pontos_vidas):
         self._pontos_vidas = pontos_vidas
-
 
     @property
     def pontos_defesa(self):
@@ -42,7 +41,6 @@ class Personagem:
     def pontos_defesa(self, pontos_defesa):
         self._pontos_defesa = pontos_defesa
 
-
     @property
     def pontos_ataque(self):
         return self._pontos_ataque
@@ -51,12 +49,10 @@ class Personagem:
     def pontos_ataque(self, pontos_ataque):
         self._pontos_ataque = pontos_ataque
 
-
     @property
     def porcentagem_powerup(self):
         return self._porcentagem_powerup
 
     @porcentagem_powerup.setter
     def porcentagem_powerup(self, porcentagem_powerup):
-        self._porcentagem_powerup = porcentagem_powerup          
-
+        self._porcentagem_powerup = porcentagem_powerup

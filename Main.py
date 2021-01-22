@@ -1,5 +1,4 @@
 from Personagem import Personagem
-import os.path
 
 
 class Main:
@@ -11,40 +10,34 @@ class Main:
                 nome_personagem = input('Nome do personagem: ')
             else:
                 break
-        tipo_personagem = input('Classe do personagem: ')
-        pontos_vidas = int(input('Coloque os pontos de VIDA do personagem: '))
-        pontos_ataque = int(input('Coloque o valor do ATAQUE do personagem: '))
-        pontos_defesa = int(
-            input('Coloque os pontos de DEFESA do personagem: '))
-        porcentagem_powerup = int(
-            input('Coloque, em porcentagem, o valor de POWERUP do personagem: '))
+        try:
+            pontos_vidas = int(
+                input('Coloque os pontos de VIDA do personagem: '))
+            pontos_ataque = int(
+                input('Coloque o valor do ATAQUE do personagem: '))
+            pontos_defesa = int(
+                input('Coloque os pontos de DEFESA do personagem: '))
+            porcentagem_powerup = int(
+                input('Coloque, em porcentagem, o valor de POWERUP do personagem: '))
+        except ValueError:
+            print('\n\nÉ necessário ser um número!\n')
 
-        personagem = Personagem(tipo_personagem, nome_personagem,
+        personagem = Personagem(nome_personagem,
                                 pontos_vidas, pontos_ataque, pontos_defesa, porcentagem_powerup)
         array.append(personagem)
 
     def mostrar_personagens(array):
-        # Declarando essa função dentro dessa outra função aplica-se o encapsulamento em python.
-        # Se a função interna será chamada só por esta função não tem porque colocar fora.
-        # Colocando dentro garante que ninguém mais chame.
-        # Assim que a mostrar_personagens() for acessada será criado um arquivo txt com os personagens criados.
-        # Se criar um personagem e colocar para mostrar, e depois criar de novo ele repete o ultimo persoagem, e estou com dificuldade de consertar isso
         def escrever_personagens_txt(array):
-            if os.path.exists('peersonags.txt'):
-                with open('personagens.txt', 'r') as f:
-                    for personagem in array:
-                        print(personagem + '\n')
-            else:
-                with open('personagens.txt', 'a+') as f:
-                    for personagem in array:
-                        f.write(personagem)
+            # Mudar para JSON
+            with open('personagens.txt', 'a+') as f:
+                for personagem in array:
+                    f.write(personagem)
 
         if len(array) == 0:
             print('\nNão há personagens criados!\n')
         for personagem in array:
             escrever_personagens_txt('================================' + '\n')
-            escrever_personagens_txt(
-                'Classe: ' + personagem.tipo_personagem + '\n')
+
             escrever_personagens_txt(
                 'Nome: ' + personagem.nome_personagem + '\n')
             escrever_personagens_txt(
@@ -61,7 +54,7 @@ class Main:
         # Não consegui fazer com que um método chame um outro método, por isso copiei o que tinha dentro da função mostrar_personagem()
         for personagem in array:
             print('\n')
-            print('Classe: ' + personagem.tipo_personagem)
+
             print('Nome: ' + personagem.nome_personagem)
             print('Vidas: ' + str(personagem.pontos_vidas))
             print('Ataque: ' + str(personagem.pontos_ataque))
@@ -82,7 +75,7 @@ class Main:
 
         for personagem in array:
             print('\n')
-            print('Classe: ' + personagem.tipo_personagem)
+
             print('Nome: ' + personagem.nome_personagem)
             print('Vidas: ' + str(personagem.pontos_vidas))
             print('Ataque: ' + str(personagem.pontos_ataque))
@@ -102,7 +95,7 @@ class Main:
                         nome_personagem = input('Nome do personagem: ')
                     else:
                         break
-                tipo_personagem = input('Classe do personagem: ')
+
                 pontos_vidas = int(
                     input('Coloque os pontos de VIDA do personagem: '))
                 pontos_ataque = int(
@@ -112,7 +105,7 @@ class Main:
                 porcentagem_powerup = int(
                     input('Coloque, em porcentagem, o valor de POWERUP do personagem: '))
 
-                personagem = Personagem(tipo_personagem, nome_personagem,
+                personagem = Personagem(nome_personagem,
                                         pontos_vidas, pontos_ataque, pontos_defesa, porcentagem_powerup)
                 array[i] = personagem
             else:

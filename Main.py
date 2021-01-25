@@ -1,4 +1,5 @@
 from Personagem import Personagem
+import json
 
 
 class Main:
@@ -27,26 +28,36 @@ class Main:
         array.append(personagem)
 
     def mostrar_personagens(array):
-        def escrever_personagens_txt(array):
-            # Mudar para JSON
-            with open('personagens.txt', 'a+') as f:
-                for personagem in array:
-                    f.write(personagem)
+        def escrever_personagens_json(obj):
+            personagens_salvar = [
+                dict(nome_personagem=obj.nome_personagem, pontos_vidas=str(obj.pontos_vidas), pontos_ataque=str(obj.pontos_ataque),
+                     pontos_defesa=str(obj.pontos_defesa), porcentagem_powerup=str(obj.porcentagem_powerup))
+                for obj in array
+            ]
+
+            dict_salvar = {"Personagens": personagens_salvar}
+            dict_salvar = json.dumps(dict_salvar, indent=4, sort_keys=False)
+
+            try:
+                personagens_json = open("personagens.json", "w")
+                personagens_json.write(dict_salvar)
+                personagens_json.close()
+            except Exception as error:
+                print("Ocorreu um erro ao carregar o arquivo.")
+                print("O erro é : {}".format(error))
 
         if len(array) == 0:
             print('\nNão há personagens criados!\n')
         for personagem in array:
-            escrever_personagens_txt('================================' + '\n')
-
-            escrever_personagens_txt(
+            escrever_personagens_json(
                 'Nome: ' + personagem.nome_personagem + '\n')
-            escrever_personagens_txt(
+            escrever_personagens_json(
                 'Vidas: ' + str(personagem.pontos_vidas) + '\n')
-            escrever_personagens_txt(
+            escrever_personagens_json(
                 'Ataque: ' + str(personagem.pontos_ataque) + '\n')
-            escrever_personagens_txt(
+            escrever_personagens_json(
                 'Defesa: ' + str(personagem.pontos_defesa) + '\n')
-            escrever_personagens_txt(
+            escrever_personagens_json(
                 'Power-Up: ' + str(personagem.porcentagem_powerup) + "%" + '\n')
 
     def excluir_personagem(array):

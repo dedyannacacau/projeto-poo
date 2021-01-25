@@ -6,8 +6,6 @@ class Personagem:
         self._pontos_defesa = pontos_defesa
         self._porcentagem_powerup = porcentagem_powerup
 
-    # Métodos trasnferidos para classe personagem aqui:
-
     @property
     def nome_personagem(self):
         return self._nome_personagem

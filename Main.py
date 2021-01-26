@@ -1,6 +1,8 @@
 from Personagem import Personagem
 from Funcionalidades import Funcionalidade
 import json
+
+
 class Main(Funcionalidade):
     personagens = []
     opcao = ''

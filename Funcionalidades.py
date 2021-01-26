@@ -1,6 +1,7 @@
 from Personagem import Personagem
 import json
 
+
 class Funcionalidade(Personagem):
     def criar_personagem(array):
         nome_personagem = input("Coloque o nome do Personagem: ")
@@ -11,52 +12,72 @@ class Funcionalidade(Personagem):
             else:
                 break
         tipo_personagem = input("Coloque a Classe do Personagem: ")
-        pontos_vidas = int(input("Coloque, em um valor inteiro, os pontos de VIDA do personagem: "))
-        pontos_ataque = int(input("Coloque, em um valor inteiro, os pontos de ATAQUE do personagem: "))
-        pontos_defesa = int(input("Coloque, em um valor inteiro, os pontos de DEFESA do personagem: "))
-        porcentagem_powerup = (input("Coloque, em porcentagem, o valor do POWER UP do personagem: "))
-        personagem = Personagem(tipo_personagem, nome_personagem, pontos_vidas, pontos_ataque, pontos_defesa, porcentagem_powerup)
+        pontos_vidas = int(
+            input("Coloque, em um valor inteiro, os pontos de VIDA do personagem: "))
+        pontos_ataque = int(
+            input("Coloque, em um valor inteiro, os pontos de ATAQUE do personagem: "))
+        pontos_defesa = int(
+            input("Coloque, em um valor inteiro, os pontos de DEFESA do personagem: "))
+        porcentagem_powerup = (
+            input("Coloque, em porcentagem, o valor do POWER UP do personagem: "))
+        personagem = Personagem(tipo_personagem, nome_personagem,
+                                pontos_vidas, pontos_ataque, pontos_defesa, porcentagem_powerup)
         array.append(personagem)
 
     def mostrar_personagens(array):
         i = 1
         if len(array) == 0:
-            print("\nNenhum personagem foi criado, volte para o menu e crie um personagem\n")
+            print(
+                "\nNenhum personagem foi criado, volte para o menu e crie um personagem\n")
             pass
-            #pode substituir por uma excessão mais elaborada, embora isso ja resolvendo.
+            # pode substituir por uma excessão mais elaborada, embora isso ja resolvendo.
         for personagem in array:
-            print("\nO nome do Personagem " + str(i) + " é: " + personagem.nome_personagem)
-            print("A classe do Personagem " + str(i) + " é: " + personagem.tipo_personagem)
-            print("A quantidade de pontos de vida do personagem " + str(i) + " são: " + str(personagem.pontos_vidas))
-            print("A quantidade de pontos de ataque do personagem " + str(i) + " são: " +str(personagem.pontos_ataque))
-            print("A quantidade de pontos de defesa do personagem " + str(i) + " são: " +str(personagem.pontos_defesa))
-            print("A porcentagem de power up do personagem " + str(i) + " é: " + personagem.porcentagem_powerup + "%\n")
+            print("\nO nome do Personagem " + str(i) +
+                  " é: " + personagem.nome_personagem)
+            print("A classe do Personagem " + str(i) +
+                  " é: " + personagem.tipo_personagem)
+            print("A quantidade de pontos de vida do personagem " +
+                  str(i) + " são: " + str(personagem.pontos_vidas))
+            print("A quantidade de pontos de ataque do personagem " +
+                  str(i) + " são: " + str(personagem.pontos_ataque))
+            print("A quantidade de pontos de defesa do personagem " +
+                  str(i) + " são: " + str(personagem.pontos_defesa))
+            print("A porcentagem de power up do personagem " + str(i) +
+                  " é: " + personagem.porcentagem_powerup + "%\n")
             i = i + 1
-
 
     def excluir_personagem(array):
         print("\nQual Personagem deseja excluir?")
         if len(array) == 0:
-            print("\nNenhum personagem foi criado, volte para o menu e crie um personagem\n")
+            print(
+                "\nNenhum personagem foi criado, volte para o menu e crie um personagem\n")
             pass
-        personagemExcluido = input("Coloque o nome do personagem que você quer excluir: ")
+        personagemExcluido = input(
+            "Coloque o nome do personagem que você quer excluir: ")
         for personagem in array:
             if personagem.nome_personagem == personagemExcluido:
                 array.remove(personagem)
-            #criar excessão aqui, caso tentar excluir um personagem que não existe.
+            # criar excessão aqui, caso tentar excluir um personagem que não existe.
 
     def editar_personagem(array):
         if len(array) == 0:
-            print("\nNenhum personagem foi criado, volte para o menu e crie um personagem\n")
+            print(
+                "\nNenhum personagem foi criado, volte para o menu e crie um personagem\n")
             pass
-        personagemEditado = input("\nColoque o nome do personagem que você quer editar editar: ")
+        personagemEditado = input(
+            "\nColoque o nome do personagem que você quer editar editar: ")
         for personagem in array:
             if personagem.nome_personagem == personagemEditado:
-                personagem.tipo_personagem = input("Coloque a Classe do Personagem: ")
-                personagem.pontos_vidas = int(input("Coloque, em um valor inteiro, os pontos de VIDA do personagem: "))
-                personagem.pontos_ataque = int(input("Coloque, em um valor inteiro, os pontos de ATAQUE do personagem: "))
-                personagem.pontos_defesa = int(input("Coloque, em um valor inteiro, os pontos de DEFESA do personagem: "))
-                personagem.porcentagem_powerup = (input("Coloque, em porcentagem, o valor do POWER UP do personagem: "))
+                personagem.tipo_personagem = input(
+                    "Coloque a Classe do Personagem: ")
+                personagem.pontos_vidas = int(
+                    input("Coloque, em um valor inteiro, os pontos de VIDA do personagem: "))
+                personagem.pontos_ataque = int(
+                    input("Coloque, em um valor inteiro, os pontos de ATAQUE do personagem: "))
+                personagem.pontos_defesa = int(
+                    input("Coloque, em um valor inteiro, os pontos de DEFESA do personagem: "))
+                personagem.porcentagem_powerup = (
+                    input("Coloque, em porcentagem, o valor do POWER UP do personagem: "))
 
     def salvar_personagem_json(array):
         personagens_salvar = [
@@ -76,4 +97,3 @@ class Funcionalidade(Personagem):
         except Exception as error:
             print("Ocorreu um erro ao carregar o arquivo.")
             print("O erro é : {}".format(error))
-

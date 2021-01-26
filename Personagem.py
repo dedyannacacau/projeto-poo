@@ -1,6 +1,7 @@
 class Personagem:
-    def __init__(self, nome_personagem, pontos_vidas, pontos_ataque, pontos_defesa, porcentagem_powerup):
+    def __init__(self, nome_personagem, tipo_personagem, pontos_vidas, pontos_ataque, pontos_defesa, porcentagem_powerup):
         self._nome_personagem = nome_personagem
+        self._tipo_personagem = tipo_personagem
         self._pontos_vidas = pontos_vidas
         self._pontos_ataque = pontos_ataque
         self._pontos_defesa = pontos_defesa
@@ -13,6 +14,14 @@ class Personagem:
     @nome_personagem.setter
     def nome_personagem(self, nome_personagem):
         self._nome_personagem = nome_personagem
+
+    @property
+    def tipo_personagem(self):
+        return self._tipo_personagem
+
+    @tipo_personagem.setter
+    def tipo_personagem(self, tipo_personagem):
+        self._tipo_personagem = tipo_personagem
 
     @property
     def pontos_vidas(self):

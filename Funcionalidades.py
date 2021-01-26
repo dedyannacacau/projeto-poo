@@ -30,7 +30,7 @@ class Funcionalidade(Personagem):
             print("A quantidade de pontos de vida do personagem " + str(i) + " são: " + str(personagem.pontos_vidas))
             print("A quantidade de pontos de ataque do personagem " + str(i) + " são: " +str(personagem.pontos_ataque))
             print("A quantidade de pontos de defesa do personagem " + str(i) + " são: " +str(personagem.pontos_defesa))
-            print("A porcentagem de power up do personagem " + str(i) + " é: " + personagem.porcentagem_powerup + "\n")
+            print("A porcentagem de power up do personagem " + str(i) + " é: " + personagem.porcentagem_powerup + "%\n")
             i = i + 1
 
 

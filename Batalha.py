@@ -32,12 +32,15 @@ class Batalha(Funcionalidade, Personagem):
                             if personagem_atacado._pontos_vidas <= 0:
                                 print("\nPersonagem ja morreu!")
                                 for personagem_atacado in personagens_batalha2:
-                                    personagens_batalha2.remove
+                                    
                             elif personagem_atacado.defender == True:
                                 if personagem_atacado.pontos_defesa < personagens_batalha2[i].pontos_ataque:
                                     var = 0
                                     var = personagens_batalha2[i].pontos_ataque - personagem_atacado.pontos_defesa
-                                    
+                                    personagem_atacado.pontos_vidas =- var
+                            else:
+                                personagem_atacado.pontos_vidas =- personagens_batalha2[i].pontos_ataque
+
 
                         
 
@@ -46,7 +49,7 @@ class Batalha(Funcionalidade, Personagem):
 
 
 
-        #        
+        #Não sei bem como chamar os personagens exatos da classse por isso to usando essa notações como "personagem_atacado.pontos_vidas", se for o certo, ótimo, senão, lascou ;-;        
         #pode criar um array temporario para isso        
         #fazer o sorteio da ordem dos personagens, um de 0 ate i.
         #contar as rodadas pra reiniciar o sorteio, sorteio acaba quando tiver i ações.

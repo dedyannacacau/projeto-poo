@@ -4,6 +4,7 @@ import os.path
 
 
 class Funcionalidade(Personagem):
+
     def criar_personagem(array):
         nome_personagem = input("Coloque o nome do Personagem: ")
         for personagem in array:
@@ -27,6 +28,7 @@ class Funcionalidade(Personagem):
 
     def mostrar_personagens(array):
         i = 1
+
         if len(array) == 0:
             print(
                 "\nNenhum personagem foi criado, volte para o menu e crie um personagem\n")
@@ -89,7 +91,7 @@ class Funcionalidade(Personagem):
         arquivo = "personagens.json"
 
         personagens_salvar = [
-            dict(nome_personagem=obj.nome_personagem, tipo_personagem=obj.tipo_personagem,  pontos_vidas=str(obj.pontos_vidas),
+            dict(nome_personagem=obj.nome_personagem, tipo_personagem=obj.tipo_personagem, pontos_vidas=str(obj.pontos_vidas),
                  pontos_ataque=str(obj.pontos_ataque),
                  pontos_defesa=str(obj.pontos_defesa), porcentagem_powerup=str(obj.porcentagem_powerup))
             for obj in array
@@ -111,3 +113,13 @@ class Funcionalidade(Personagem):
         except Exception as error:
             print("Ocorreu um erro ao carregar o arquivo.")
             print("O erro é : {}".format(error))
+
+    def carregar_personagem_json(array):
+        with open('personagens.json', 'r', encoding='utf8') as f:
+            data = json.load(f)
+        print(data)
+
+    def verificar_pv_personagem(array):
+        for personagem in array:
+            if personagem.pontos_vidas <= 0:
+                array.remove(personagem)

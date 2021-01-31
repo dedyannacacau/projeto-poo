@@ -1,6 +1,6 @@
 from Funcionalidades import Funcionalidade
 from Personagem import Personagem
-from random import randint
+import ramdon
 
 
 class Batalha(Funcionalidade, Personagem):

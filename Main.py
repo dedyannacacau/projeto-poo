@@ -12,7 +12,8 @@ class Main(Funcionalidade):
         print('3- Editar Personagem')
         print('4- Excluir Personagem')
         print('5- Salvar os Personagens')
-        print('6- Realizar uma Batalha')
+        print('6- Carregar Personagens')
+        print('7- Realizar batalha')
         print('0- Sair')
 
         opcao = int(input())
@@ -29,3 +30,5 @@ class Main(Funcionalidade):
             Funcionalidade.excluir_personagem(personagens)
         elif opcao == 5:
             Funcionalidade.salvar_personagem_json(personagens)
+        elif opcao == 6:
+            Funcionalidade.carregar_personagem_json(personagens)

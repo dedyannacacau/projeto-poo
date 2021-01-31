@@ -76,4 +76,11 @@ class Funcionalidade(Personagem):
         except Exception as error:
             print("Ocorreu um erro ao carregar o arquivo.")
             print("O erro é : {}".format(error))
+            
+    def carregar_personagem_json(array):
+
+    def verificar_pv_personagem(array):
+        for personagem in array:
+            if personagem.pontos_vidas <= 0:
+                array.remove(personagem)
 

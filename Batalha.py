@@ -1,8 +1,9 @@
 from Funcionalidades import Funcionalidade
+from Personagem import Personagem
 from random import randint
 
-class Batalha(Funcionalidade):
-    def __init__(self, atacar, defender, powerup, personagens_batalha, personagens_batalha2, i, rodadas):
+class Batalha(Funcionalidade, Personagem):
+    def __init__(self, atacar, defender, powerup, personagens_batalha, personagens_batalha2, i, rodadas, ):
         self._atacar = False
         self._defender = False
         self.powerup = False
@@ -26,16 +27,21 @@ class Batalha(Funcionalidade):
             while len(personagens_batalha2) != 0:
                     i = randint(0, len(personagens_batalha2))
                     for personagens_batalha2[i] in array:
-                        if tolower.personagem.tipo_personagem == "arqueiro":
-                            #chamar metodos arqueiro
-                            #mais a questao de ataque e defesa da propria classe batalha
-                        elif tolower.personagem.tipo_personagem == "bruxo":
-                            #chamar metodos bruxo
-                            #mais a questao de ataque e defesa da propria classe batalha
-                        elif tolower.personagem.tipo_personagem == "cavaleiro":
-                            #chamar metodos cavaleiro
-                            #mais a questao de ataque e defesa da propria classe batalha                   
-                    personagens_batalha2[i].remove
+                        if _atacar == True:
+                            personagem_atacado = input("\nEscolha um personagem para atacar: ")
+                            if personagem_atacado._pontos_vidas <= 0:
+                                print("\nPersonagem ja morreu!")
+                                for personagem_atacado in personagens_batalha2:
+                                    personagens_batalha2.remove
+                            elif personagem_atacado.defender == True:
+                                if personagem_atacado.pontos_defesa < personagens_batalha2[i].pontos_ataque:
+                                    var = 0
+                                    var = personagens_batalha2[i].pontos_ataque - personagem_atacado.pontos_defesa
+                                    
+
+                        
+
+                        personagens_batalha2[i].remove
             rodadas++
 
 

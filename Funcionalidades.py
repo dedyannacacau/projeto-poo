@@ -123,3 +123,6 @@ class Funcionalidade(Personagem):
         for personagem in array:
             if personagem.pontos_vidas <= 0:
                 array.remove(personagem)
+
+    def ataque(array, array2):
+        pass

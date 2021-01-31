@@ -59,12 +59,9 @@ class Funcionalidade(Personagem):
                 personagem.porcentagem_powerup = (input("Coloque, em porcentagem, o valor do POWER UP do personagem: "))
 
     def salvar_personagem_json(array):
-        personagens_salvar = [
-            dict(nome_personagem=obj.nome_personagem, tipo_personagem=obj.tipo_personagem,  pontos_vidas=str(obj.pontos_vidas),
-                 pontos_ataque=str(obj.pontos_ataque),
-                 pontos_defesa=str(obj.pontos_defesa), porcentagem_powerup=str(obj.porcentagem_powerup))
-            for obj in array
-        ]
+        personagens_salvar =[ dict(nome_personagem=obj.nome_personagem, tipo_personagem=obj.tipo_personagem,  pontos_vidas=str(obj.pontos_vidas),pontos_ataque=str(obj.pontos_ataque),pontos_defesa=str(obj.pontos_defesa), porcentagem_powerup=str(obj.porcentagem_powerup))
+            for obj in array]
+        
 
         dict_salvar = {"Personagens": personagens_salvar}
         dict_salvar = json.dumps(dict_salvar, indent=4, sort_keys=False)
@@ -76,11 +73,34 @@ class Funcionalidade(Personagem):
         except Exception as error:
             print("Ocorreu um erro ao carregar o arquivo.")
             print("O erro é : {}".format(error))
+    
+    def carregar_personagem_json(lista, array):
+        personagem = Personagem
+        with open('personagens.json', 'r') as f:
+            data = json.load(f)
+            print(data)
+            #array = data.get("Personagens")
+            personagem.nome_personagem = data.get("nome_personagem")
+            personagem.tipo_personagem = data.get("tipo_personagem")
+            personagem.pontos_vidas = data.get("pontos_vidas")
+            personagem.pontos_ataque = data.get("pontos_ataque")
+            personagem.pontos_defesa = data.get("pontos_defesa")
+            personagem.porcentagem_powerup = data.get("porcentagem_powerup")
+            #personagem = Personagem(tipo_personagem, nome_personagem, pontos_vidas, pontos_ataque, pontos_defesa, porcentagem_powerup)
             
-    def carregar_personagem_json(array):
+             
 
+        
+       
     def verificar_pv_personagem(array):
         for personagem in array:
             if personagem.pontos_vidas <= 0:
                 array.remove(personagem)
+    
+    def ataque(array, array2):
+        pass
+
+
+            
+
 

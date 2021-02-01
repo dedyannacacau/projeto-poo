@@ -2,12 +2,12 @@ from Personagem import Personagem
 from Funcionalidades import Funcionalidade
 from Batalha import Batalha
 import json
-
-
 class Main(Funcionalidade, Batalha):
     personagens = []
     opcao = ''
     lista = []
+    personagem_batalha = []
+    personagem_batalha2 = []
     while opcao != 0:
         print('\n1- Criar Personagem')
         print('2- Mostrar Personagens')
@@ -35,9 +35,11 @@ class Main(Funcionalidade, Batalha):
             personagens.clear()
             Funcionalidade.carregar_personagem_json(personagens)
         elif opcao == 6:
-            Funcionalidade.carregar_personagem_json(personagens)
 
+            Funcionalidade.carregar_personagem_json(personagens)
+            
         elif opcao == 7:
-            Funcionalidade.salvar_personagem_json(personagens)
-            Batalha.escolher_personagens(personagens)
-            Batalha.batalha(personagens)
+            Batalha.escolher_personagens(personagens, personagem_batalha)
+            Batalha.batalha(personagens, personagem_batalha, personagem_batalha2)
+            
+            

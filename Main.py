@@ -2,6 +2,8 @@ from Personagem import Personagem
 from Funcionalidades import Funcionalidade
 from Batalha import Batalha
 import json
+
+
 class Main(Funcionalidade, Batalha):
     personagens = []
     opcao = ''
@@ -33,4 +35,4 @@ class Main(Funcionalidade, Batalha):
         elif opcao == 6:
             Funcionalidade.carregar_personagem_json(lista, personagens)
         elif opcao == 7:
-            
+            pass

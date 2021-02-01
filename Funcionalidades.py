@@ -100,9 +100,9 @@ class Funcionalidade(Personagem):
             
     def verificar_pv_personagem(array):
         for personagem in array:
-            if personagem.pontos_vidas <= 0:
+            if float(personagem.pontos_vidas) <= 0:
                 array.remove(personagem)
-                
+
     #infelizmente foi o maior metodo feito aqui, mas é nele que tem as vantagens e desvantagens de cada classe de personagens 
     def ataque(personagem_da_vez, array, array2):
         personagem_da_vez.atacar = True
@@ -232,5 +232,3 @@ class Funcionalidade(Personagem):
                  
 
 
-
-      

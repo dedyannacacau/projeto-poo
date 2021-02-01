@@ -58,7 +58,7 @@ class Personagem:
     @porcentagem_powerup.setter
     def porcentagem_powerup(self, porcentagem_powerup):
         self._porcentagem_powerup = porcentagem_powerup
-
+    
     @property
     def atacar(self):
         return self._atacar
@@ -82,3 +82,11 @@ class Personagem:
     @powerup.setter
     def powerup(self, powerup):
         self._powerup = powerup
+
+    @property
+    def habilidade_especial(self):
+        return self._habilidade_especial
+
+    @habilidade_especial.setter
+    def powerup(self, powerup):
+        self._habilidade_especial = habilidade_especial

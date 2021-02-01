@@ -8,4 +8,4 @@ class Bruxo(Personagem):
         for personagem_atacado in array:
             array.remove(personagem_atacado)
         for personagem_atacado in array2:
-            array.remove(personagem_atacado)
+            array2.remove(personagem_atacado)

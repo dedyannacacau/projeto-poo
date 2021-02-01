@@ -2,6 +2,8 @@ from Personagem import Personagem
 from Funcionalidades import Funcionalidade
 from Batalha import Batalha
 import json
+
+
 class Main(Funcionalidade, Batalha):
     personagens = []
     opcao = ''
@@ -19,7 +21,6 @@ class Main(Funcionalidade, Batalha):
         print('0- Sair')
 
         opcao = int(input())
-
         if opcao == 1:
             Funcionalidade.criar_personagem(personagens)
         elif opcao == 2:
@@ -35,11 +36,14 @@ class Main(Funcionalidade, Batalha):
             personagens.clear()
             Funcionalidade.carregar_personagem_json(personagens)
         elif opcao == 6:
-
             Funcionalidade.carregar_personagem_json(personagens)
-            
+            Funcionalidade.converter_valores(personagens)
         elif opcao == 7:
+            Funcionalidade.converter_valores(personagens)
             Batalha.escolher_personagens(personagens, personagem_batalha)
-            Batalha.batalha(personagens, personagem_batalha, personagem_batalha2)
-            
-            
+            personagem_batalha2 = personagem_batalha2 + personagem_batalha
+            Batalha.batalha(personagens, personagem_batalha,
+                            personagem_batalha2)
+        elif opcao == 0:
+            print("Saindo...")
+            exit()

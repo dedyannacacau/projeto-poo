@@ -81,10 +81,7 @@ class Funcionalidade(Personagem):
             data = json.load(f)
             data = data.get("Personagens")
             salva_array = data
-            print(data)
-            print(salva_array)
             for salva_array in salva_array:
-
                 salva_array2 = salva_array
                 nome_personagem = salva_array2['nome_personagem']
                 tipo_personagem = salva_array2['tipo_personagem']
@@ -95,10 +92,6 @@ class Funcionalidade(Personagem):
                 personagem = Personagem(tipo_personagem, nome_personagem, pontos_vidas, pontos_ataque, pontos_defesa, porcentagem_powerup)
                 array.append(personagem)
             
-             
-
-        
-       
     def verificar_pv_personagem(array):
         for personagem in array:
             if personagem.pontos_vidas <= 0:
@@ -128,17 +121,24 @@ class Funcionalidade(Personagem):
         personagem_da_vez.pontos_ataque = 
         personagem_da_vez.pontos_defesa =
         personagem_da_vez.pontos_vidas =
+        array2.remove(personagem_da_vez)
     
     def hab_especial(array, array2):
+        if personagem_da_vez.habilidade_especial == True:
+            print("Personagem já usou sua habilidade especial uma vez na batalha, logo não poderá usar mais uma vez.")
+            pass #pode criar uma excessão aqui!
         personagem_da_vez.habilidade_especial = True
-        if tolower(personagem_da_vez.tipo_personagem) = "arqueiro":
-            Arqueiro.hab_especial
+        if tolower(personagem_da_vez.tipo_personagem) == "arqueiro":
+            Arqueiro.hab_especial(array, array2)
         
-        if tolower(personagem_da_vez.tipo_personagem) = "bruxo":
-            Bruxo.hab_especial
+        elif tolower(personagem_da_vez.tipo_personagem) == "bruxo":
+            Bruxo.hab_especial(array, array2)
 
-        if tolower(personagem_da_vez.tipo_personagem) = "cavaleiro":
-            Cavaleiro.hab_especial
+        elif tolower(personagem_da_vez.tipo_personagem) == "cavaleiro":
+            Cavaleiro.hab_especial(array, array2)
+        
+        array2.remove(personagem_da_vez)
+        
 
 
             

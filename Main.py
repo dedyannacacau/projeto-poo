@@ -11,9 +11,9 @@ class Main(Funcionalidade, Batalha):
         print('2- Mostrar Personagens')
         print('3- Editar Personagem')
         print('4- Excluir Personagem')
-        print('5- Salvar os Personagens')
-        print('6- Carregar os Personagens')
-        print('7- Realizar uma Batalha')
+        print('5- Salvar os Personagens, NOTA: ao salvar os dados anteriores são sobrescritos, podendo perder tudo!')
+        print('6- Carregar os Personagens, NOTA: Carregue o jogo apenas uma vez, de preferencia assim que iniciar-lo.')
+        print('7- Realizar uma Batalha, NOTA: ao iniciar uma batalha os personagens serão salvos, sobrescrevendo o save antigo, tendo risco de perder tudo!')
         print('0- Sair')
 
         opcao = int(input())
@@ -30,7 +30,13 @@ class Main(Funcionalidade, Batalha):
             Funcionalidade.excluir_personagem(personagens)
         elif opcao == 5:
             Funcionalidade.salvar_personagem_json(personagens)
+            personagens.clear()
+            Funcionalidade.carregar_personagem_json(personagens)
         elif opcao == 6:
-            Funcionalidade.carregar_personagem_json(lista, personagens)
+            Funcionalidade.carregar_personagem_json(personagens)
+            
         elif opcao == 7:
+            Funcionalidade.salvar_personagem_json(personagens)
+            Batalha.escolher_personagens(personagens)
+            Batalha.batalha(personagens)
             

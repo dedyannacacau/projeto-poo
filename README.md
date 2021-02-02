@@ -30,7 +30,4 @@ O projeto foi desenvolvido utilizando
 - Abra a classe Main.py
 - Execute a aplicação com o Run 
 
-## :memo: License
-
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
-
+--

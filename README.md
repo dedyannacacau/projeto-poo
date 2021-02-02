@@ -1,5 +1,5 @@
 <p align="center">
-  <b>Jogo Battle Royale</b>
+  <h1>Jogo Battle Royale</h1>
 </p>
 
 <br />
@@ -28,7 +28,7 @@ O projeto foi desenvolvido utilizando
 
 - Faça um clone desse repositório: `git clone https://github.com/dedyannacacau/projeto-poo`
 - Abra a classe Main.py
-- Inicie a aplicação
+- Execute a aplicação com o Run 
 
 ## :memo: License
 

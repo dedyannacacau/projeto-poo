@@ -14,7 +14,7 @@
 
 ## :bookmark: Sobre
 
-Projeto criado no decorrer da disciplina de Programação Orientada a Objetos da Universidade Estadual do Ceará(UECE). O jogo consiste em um Battle Royale, que usa elementos de estratégia e habilidade. Seu objetivo consiste em ser o único jogador sobrevivente de um total que batalha entre si.
+Projeto criado no decorrer da disciplina de Programação Orientada a Objetos da Universidade Estadual do Ceará(UECE). O jogo consiste em um Battle Royale, que usa elementos de estratégia e habilidade. Seu objetivo consiste em ter um único jogador sobrevivente de um total que batalha entre si.
 
 ## :rocket: Tecnologia Utilizada
 

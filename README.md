@@ -29,5 +29,3 @@ O projeto foi desenvolvido utilizando
 - Faça um clone desse repositório: `git clone https://github.com/dedyannacacau/projeto-poo`
 - Abra a classe Main.py
 - Execute a aplicação com o Run 
-
---

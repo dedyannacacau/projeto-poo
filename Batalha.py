@@ -18,13 +18,13 @@ class Batalha(Funcionalidade, Personagem):
                     "\nColoque o nome do personagem aqui. Coloque 0 para sair: ")
 
                 if personagem_escolhido == "0":
-                    return
+                    exit()
                 else:
-                    print(personagem_escolhido)
+                    print(personagem_escolhido + "\n")
                     # personagem_escolhido = input("Coloque o nome do personagem aqui: ")
-                    if str(personagem.nome_personagem) == personagem_escolhido:
+                    if str(personagem.nome_personagem.lower()) == personagem_escolhido.lower():
                         personagem_batalha.append(personagem)
-                    elif str(personagem.nome_personagem) != personagem_escolhido and str(personagem.nome_personagem) != 0 and personagem_escolhido != 0:
+                    elif str(personagem.nome_personagem.lower()) != personagem_escolhido.lower() and str(personagem.nome_personagem.lower()) != 0 and personagem_escolhido.lower() != 0:
                         print('Personagem não existe!')
                         personagem_escolhido = input(
                             "Coloque o nome do personagem aqui. Coloque 0 para sair: ")
@@ -88,7 +88,7 @@ class Batalha(Funcionalidade, Personagem):
                     print("Saindo da batalha.")
                     exit()
                 # personagem_batalha2.remove(personagem_batalha2[i])
-                #i = 0
+                # i = 0
 
             for personagem in personagem_batalha:
                 personagem.pontos_ataque = personagem.pontos_ataque * 1.1

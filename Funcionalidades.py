@@ -1,4 +1,7 @@
 from Personagem import Personagem
+from Arqueiro import Arqueiro
+from Bruxo import Bruxo
+from Cavaleiro import Cavaleiro
 import json
 
 
@@ -138,9 +141,9 @@ class Funcionalidade(Personagem):
     # infelizmente foi o maior metodo feito aqui, mas é nele que tem as vantagens e desvantagens de cada classe de personagens
     def ataque(personagem_da_vez, array, array2):
         personagem_da_vez.atacar = True
-        print(personagem_da_vez.tipo_personagem)
+        # print(personagem_da_vez.tipo_personagem)
         personagem_atacado = input(
-            "\nColoque o nome do Personagem que deseja atacar: ")
+            "\nColoque o nome do Personagem que deseja atacar: \n")
         for personagem in array:
             if personagem.nome_personagem == personagem_atacado:
                 personagem_atacado = personagem
@@ -279,14 +282,14 @@ class Funcionalidade(Personagem):
     def hab_especial(personagem_da_vez, array, array2):
         if personagem_da_vez.habilidade_especial == True:
             print("Personagem já usou sua habilidade especial uma vez na batalha, logo não poderá usar mais uma vez.")
-            pass
-        personagem_da_vez.habilidade_especial = True
-        if personagem_da_vez.tipo_personagem.lower() == "arqueiro":
-            Arqueiro.hab_especial(array, array2)
-        elif personagem_da_vez.tipo_personagem.lower() == "bruxo":
-            Bruxo.hab_especial(array, array2)
-        elif personagem_da_vez.tipo_personagem.lower() == "cavaleiro":
-            Cavaleiro.hab_especial(array, array2)
+        else:
+            #personagem_da_vez.habilidade_especial = True
+            if personagem_da_vez.tipo_personagem.lower() == "arqueiro":
+                Arqueiro.hab_especial(array, array2, personagem_da_vez)
+            elif personagem_da_vez.tipo_personagem.lower() == "bruxo":
+                Bruxo.hab_especial(array, array2)
+            elif personagem_da_vez.tipo_personagem.lower() == "cavaleiro":
+                Cavaleiro.hab_especial(array, array2)
 
     def printar_vida_personagem(array):
         for personagem in array:

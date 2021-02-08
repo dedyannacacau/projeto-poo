@@ -1,20 +1,28 @@
 {
-    "Personagens": [
-        {
-            "nome_personagem": "Legolas ",
-            "tipo_personagem": "Arqueiro",
-            "pontos_vidas": "29.0",
-            "pontos_ataque": "28.0",
-            "pontos_defesa": "27.0",
-            "porcentagem_powerup": "26"
-        },
-        {
-            "nome_personagem": "Geralt",
-            "tipo_personagem": "Bruxo",
-            "pontos_vidas": "30.0",
-            "pontos_ataque": "25.0",
-            "pontos_defesa": "28.0",
-            "porcentagem_powerup": "29"
-        }
-    ]
+  "Personagens": [
+    {
+      "nome_personagem": "Legolas",
+      "tipo_personagem": "Arqueiro",
+      "pontos_vidas": "29.0",
+      "pontos_ataque": "28.0",
+      "pontos_defesa": "27.0",
+      "porcentagem_powerup": "26"
+    },
+    {
+      "nome_personagem": "Rei Arthur",
+      "tipo_personagem": "Cavaleiro",
+      "pontos_vidas": "27.0",
+      "pontos_ataque": "26.0",
+      "pontos_defesa": "25.0",
+      "porcentagem_powerup": "26"
+    },
+    {
+      "nome_personagem": "Geralt",
+      "tipo_personagem": "Bruxo",
+      "pontos_vidas": "26.0",
+      "pontos_ataque": "26.0",
+      "pontos_defesa": "25.0",
+      "porcentagem_powerup": "24"
+    }
+  ]
 }

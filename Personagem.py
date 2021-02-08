@@ -88,5 +88,5 @@ class Personagem:
         return self._habilidade_especial
 
     @habilidade_especial.setter
-    def habilidade_especial(self, powerup):
+    def habilidade_especial(self, habilidade_especial):
         self._habilidade_especial = habilidade_especial
